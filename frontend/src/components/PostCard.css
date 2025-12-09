@@ -1,0 +1,236 @@
+.post-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-primary);
+    transition: background var(--transition-fast);
+    animation: fadeIn 0.3s ease;
+}
+
+.post-card:hover {
+    background: rgba(255, 255, 255, 0.01);
+}
+
+.post-avatar {
+    flex-shrink: 0;
+}
+
+.post-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.post-author-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.post-category-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid;
+}
+
+.post-author-name {
+    font-weight: 700;
+    color: var(--text-primary);
+    transition: color var(--transition-fast);
+}
+
+.post-author-name:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.post-date {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.post-delete-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-delete-btn:hover {
+    color: var(--error);
+    background: rgba(244, 33, 46, 0.1);
+}
+
+.post-delete-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.post-text-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.post-text {
+    color: var(--text-primary);
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    word-wrap: break-word;
+}
+
+.post-image-container {
+    margin-bottom: 0.75rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-primary);
+}
+
+.post-image {
+    width: 100%;
+    display: block;
+    transition: transform var(--transition-slow);
+}
+
+.post-image:hover {
+    transform: scale(1.02);
+}
+
+.post-actions {
+    display: flex;
+    gap: 3rem;
+    margin-top: 0.75rem;
+}
+
+.post-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: var(--radius-full);
+    transition: all var(--transition-fast);
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+}
+
+.post-action-btn:hover {
+    color: var(--primary);
+    background: rgba(29, 155, 240, 0.1);
+}
+
+.post-action-btn.liked {
+    color: var(--accent);
+}
+
+.post-action-btn.liked:hover {
+    color: var(--accent);
+    background: rgba(249, 24, 128, 0.1);
+}
+
+.post-action-btn.liked svg {
+    animation: likeAnimation 0.3s ease;
+}
+
+@keyframes likeAnimation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .post-card {
+        padding: 0.75rem;
+    }
+
+    .post-actions {
+        gap: 2rem;
+    }
+}
+
+/* Media Grid Styles */
+.post-media-grid {
+    display: grid;
+    gap: 2px;
+    margin-top: 12px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.media-count-1 {
+    grid-template-columns: 1fr;
+}
+
+.media-count-2 {
+    grid-template-columns: 1fr 1fr;
+    aspect-ratio: 2/1;
+}
+
+.media-count-3 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    aspect-ratio: 1/1;
+}
+
+.media-count-3 .media-item:first-child {
+    grid-row: span 2;
+}
+
+.media-count-4 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    aspect-ratio: 1/1;
+}
+
+.media-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+
+.post-image,
+.post-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.media-count-1 .post-image,
+.media-count-1 .post-video {
+    max-height: 600px;
+    object-fit: contain;
+    background-color: #000;
+}

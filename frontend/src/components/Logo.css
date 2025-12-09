@@ -1,0 +1,46 @@
+.logo {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.logo-white {
+    filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.1));
+}
+
+.logo-blue {
+    filter: drop-shadow(0 2px 8px rgba(29, 155, 240, 0.3));
+}
+
+.logo-grey {
+    opacity: 0.8;
+}
+
+.logo-primary {
+    filter: drop-shadow(0 2px 8px rgba(var(--primary-rgb), 0.3));
+}
+
+/* Hover effects */
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.navbar-logo .logo:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Animation for auth pages */
+@keyframes logoFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.auth-header .logo {
+    animation: logoFloat 3s ease-in-out infinite;
+}

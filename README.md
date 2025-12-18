@@ -2,7 +2,7 @@
 
 A modern full-stack social media application with real-time messaging, notifications, and media sharing.
 
-**Active work at : https://social-media-app-seven-sage.vercel.app/**
+**Maybe live on: https://social-media-app-seven-sage.vercel.app/**
 
 ## Features
 
